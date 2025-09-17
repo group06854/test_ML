@@ -31,7 +31,7 @@ Workflows can be triggered by various GitHub events, such as push, pull requests
 Runners are the virtual environments/machines where workflows are executed. GitHub provides hosted runners with Linux, Windows, and macOS environments, or you can host your own runner for more control over the environment.
 
 #### 1.5 Actions
-Actions are reusable units of code that you can use as steps within your jobs. You can create your own actions or use actions shared by the GitHub community in the GitHub Marketplace.
+Actions are reusable units of code that you can use as steps within your jobs. You can create your own actions or use actions shared by the GitHub community in the GitHub Marketplace...
 
 GitHub Actions makes it straightforward for developers to automate their build, test, and deployment workflows directly within GitHub, helping to improve productivity and streamline the development process. Here we will use two Actions:
 
