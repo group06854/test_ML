@@ -60,9 +60,9 @@ jobs:
 
       - name: Generate Report
         run: | 
-          precision=$(jq '.precision' part2/models/best/metadata.json)
-          recall=$(jq '.recall' part2/models/best/metadata.json)
-          f1=$(jq '.f1' part2/models/best/metadata.json)
+          precision=$(jq -r '.precision' part2/models/best/metadata.json)
+          recall=$(jq -r '.recall' part2/models/best/metadata.json)
+          f1=$(jq -r '.f1' part2/models/best/metadata.json)
           model_type=$(jq -r '.model_filename' part2/models/best/metadata.json | sed -E 's/model_(.*)\.joblib/\1/')
 
           mkdir -p part2/reports
@@ -83,9 +83,9 @@ jobs:
           # Possible error
           echo "| Metric    | Value |" >> "$report_path"
           echo "|-----------|-------|" >> "$report_path"
-          echo "| Precision | precision |" >> "$report_path"
-          echo "| Recall    | recall |" >> "$report_path"
-          echo "| F1 Score  | f1 |" >> "$report_path"
+          echo "| Precision | $precision |" >> "$report_path"
+          echo "| Recall    | $recall |" >> "$report_path"
+          echo "| F1 Score  | $f1 |" >> "$report_path"
           echo "" >> "$report_path"
 
           echo "## Images" >> "$report_path"
